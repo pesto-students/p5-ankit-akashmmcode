@@ -32,7 +32,7 @@ sound1();                             //this now refers to the object that we pa
 let sound2 = human.speak.bind(dog);  
 sound2();
 
-// --------------------------------------------------------------------------------------------------
+// -----------------------------------
 
 // here we have aa stand alone function 
 
@@ -53,3 +53,68 @@ meow();
 
 const mooo = speak.bind(cow,"mooo");              //borrowing a function and creating a copy
 mooo();
+
+
+// ------------------------------------------------------------------------------------------------------------------------------
+
+// call
+
+
+let employee ={
+  name:"spongebob",
+  cook:function(){
+    console.log(`${this.name} is cooking`)
+  }
+}
+
+let manager ={
+  name:"mr.krabs",
+  managing:function(){
+    console.log(`${this.name} is managing`)
+  }
+}
+
+let engineer ={
+  name:"patrick star",
+  engineering:function(){
+    console.log(`${this.name} is engineering`)
+  }
+}
+
+
+// employee.cook();
+// manager.managing();
+// engineer.engineering();
+
+
+
+//here lets say sponge bob is on leave and the manager has to take incharge of the cooking 
+// but he has no access to the cook function but he can borrow the cook function from the 
+// employee object by using the call method 
+employee.cook.call(manager);
+
+// Now that manager is cooking someone has to manage and the manager role falls to the engineer
+// but he has no access to the managing function but he can borrow the managing function from the 
+// manager object by using the call method
+manager.managing.call(engineer);
+
+
+// --------------------------------------------------------------------------------------------------------------
+
+//apply() = Borrow an object's function.
+//          similar to call(), but pass an array
+
+var team = {
+  UI:function(members){
+    console.log(this.name);
+    for(let i in members){
+      console.log(members[i]);
+    }
+  }
+}
+
+var leader = {name:"steve"}
+var members = [{name:"jack"},{name:"mark"}];
+
+
+team.UI.apply(leader,[members]);
