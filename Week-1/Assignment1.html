@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <style>
+        * {
+            font-family: 'Lato', sans-serif;
+
+        }
+
+        aside {
+            width: 35px;
+            height: 580px;
+            background-color: darkgrey;
+        }
+
+        aside>i {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        #top-nav {
+            display: flex;
+        }
+
+        body {
+            margin: 0;
+        }
+
+
+
+        header {
+            height: 250px;
+            background-color: #212529;
+        }
+
+        img {
+            width: 190px;
+            padding: 30px;
+        }
+
+        #discription {
+            background-color: #212529;
+            height: 250px;
+            width: 1080px;
+        }
+
+        #discription>h1 {
+            margin-top: 30px;
+            margin-bottom: 0px;
+            color: aliceblue;
+        }
+
+        #discription>p {
+            margin: 0px;
+            color: aliceblue;
+        }
+
+        nav {
+            margin-top: 50px;
+        }
+
+        nav>i {
+            margin-right: 20px;
+            color: aliceblue;
+        }
+
+        table {
+            margin-top: 50px;
+            width: 870px;
+            height: 220px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .row {
+            display: flex;
+            background-color: #212529;
+            height: 80px;
+            color: aliceblue;
+        }
+
+        .row>img {
+            width: 64px;
+            height: 56px;
+            padding: 9px;
+        }
+
+        .row>nav {
+
+            margin-left: auto;
+        }
+
+        .row nav>i {
+            font-size: 32px;
+
+        }
+
+        /* .column {
+            flex: 30%;  
+        } */
+
+        .column>p {
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+
+        #playing{
+            margin-top: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="top-nav">
+        <aside>
+            <i class="las la-bars"></i>
+            <i class="las la-home"></i>
+            <i class="las la-search"></i>
+            <i class="las la-volume-up"></i>
+            <i class="las la-user-secret"></i>
+            <i class="las la-keyboard"></i>
+            <i class="las la-cog"></i>
+            <i class="lab la-soundcloud"></i>
+        </aside>
+        <header>
+            <img src="https://vif1g.csb.app/src/assets/cattyboard.jpg" alt="dwdw">
+        </header>
+        <div id="discription">
+            <h1>Cattyboard Top 100 Single Charts (11.06.36)</h1><br>
+            <p>Unknown Artist</p><br>
+            <p>2016.Charts.100 songs</p>
+            <nav>
+                <i class="las la-paper-plane">Play all</i>
+                <i class="las la-plus">Add to</i>
+                <i class="las la-ellipsis-h">More</i>
+            </nav>
+            <table>
+
+                <tr>
+                    <td>1.Stairway to heaven</td>
+                    <td>Led Zeppelin</td>
+                    <td>3.14</td>
+                </tr>
+                <tr>
+                    <td>2.Wish you were here</td>
+                    <td>Pink Floyd</td>
+                    <td>4.67</td>
+                </tr>
+                <tr>
+                    <td>3.Yellow Submarine</td>
+                    <td>Beatles</td>
+                    <td>4.2</td>
+                </tr>
+                <tr>
+                    <td>4.Sweet Child O' Mine </td>
+                    <td>Guns N' Roses</td>
+                    <td>5.03</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <img src="https://vif1g.csb.app/src/assets/cattyboard.jpg" alt="Cattyboard">
+        <div class="column">
+            <p><b>White Rabbit</b></p>
+            <p>Jefferson's Airplane</p>
+        </div>
+        <nav id="playing">
+            <i class="lab la-spotify"></i>
+            <i class="las la-heart"></i>
+            <i class="las la-pause"></i>
+        </nav>
+    </div>
+</body>
+
+</html>
