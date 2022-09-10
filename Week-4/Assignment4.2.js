@@ -9,7 +9,7 @@ Person.prototype.teach = function(){
   console.log(`${this.name.toUpperCase()} is now teaching ${this.subject.toUpperCase()}`);
 }
 
-var Teacher = new Person("akash","Inheritance");            //object Teacher is created derived from Person class
+const Teacher = new Person("akash","Inheritance");            //object Teacher is created derived from Person class
 
 console.log(Teacher.teach());                               //here the teach methord is called on Teacher even if the object 
                                                             //teacher doesnt have the methord teach it is inherited from the parent
