@@ -1,4 +1,6 @@
-function getNumber(pro,ms){
+
+//function which generates a random number, with a function and time as arguments 
+function getNumber(pro,ms){          
   
   let random = Math.floor(Math.random() * 100);
 
@@ -8,6 +10,8 @@ function getNumber(pro,ms){
 
   pro("Pending")
 }
+
+//promise function to handle the logics 
 
 function promise(num){
 
