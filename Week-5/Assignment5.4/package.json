@@ -1,0 +1,11 @@
+{
+  "name": "assignment5.4",
+  "version": "1.0.0",
+  "description": "assignment-5.4",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {"test": "jest --watchAll"
+  },
+  "author": "akash",
+  "license": "ISC"
+}
