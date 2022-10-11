@@ -1,4 +1,3 @@
-
 question 1 file name is q1reverseLinkedList.js
 question 2 file name is q2RotateLinkedList.js
 question 3 file name is q3LoopDetection.js
