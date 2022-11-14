@@ -1,0 +1,55 @@
+.card-container {
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #f0eff4;
+    margin-block: 10px;
+    box-shadow: 5px 10px #e2eafc;
+  }
+  
+  .complete {
+    background-color: #70e000;
+    border-radius: 10px;
+  }
+  .edit {
+    background-color: aqua;
+    border-radius: 10px;
+  }
+  .delete {
+    background-color: red;
+    border-radius: 10px;
+  }
+  
+  .card-container.completed div {
+    text-decoration-line: line-through;
+    text-decoration-color: red;
+  }
+  
+  .task-heading {
+    width: 400px;
+  }
+  .task-heading h1 {
+    margin: 0px;
+  }
+  
+  .task-desc {
+    width: 200px;
+  }
+  
+  .editButton {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+  .editButton:hover {
+    background-color: #222725;
+  }
+  
