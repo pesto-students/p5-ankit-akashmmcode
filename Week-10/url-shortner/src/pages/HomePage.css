@@ -1,0 +1,33 @@
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+  }
+  
+  .left {
+    left: 0;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .left-text {
+    color: #ff5d8f;
+    word-wrap: break-word;
+    font-size: 7vw;
+  }
+  
+  .left-text-outer-div {
+    width: 60%;
+    /* border: 2px solid; */
+    height: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

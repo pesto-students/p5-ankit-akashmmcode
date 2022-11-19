@@ -1,0 +1,45 @@
+.right {
+    right: 0;
+    background-color: #000814;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 5px solid #6fffe9;
+  }
+  
+  input {
+    background-color: #fed140;
+    width: 50%;
+    height: 43px;
+    border-style: hidden;
+  }
+  
+  button {
+    height: 45px;
+    width: 15%;
+    background-color: #ba181b;
+    border-style: hidden;
+  }
+  
+  button:hover {
+    background-color: forestgreen;
+  }
+  
+  input:-internal-autofill-selected {
+    background-color: #fed140 !important;
+  }
+  
+  .url-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .url-input-container > input.error {
+    border: 1px solid red;
+  }
+  
+  .error-text {
+    color: red;
+  }
+  
