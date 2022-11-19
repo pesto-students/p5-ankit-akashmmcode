@@ -1,0 +1,12 @@
+.light-mode {
+  background-color: aquamarine;
+  height: 50rem;
+  text-align: center;
+}
+
+.dark-mode {
+  background-color: black;
+  color: blanchedalmond;
+  height: 50rem;
+  text-align: center;
+}
