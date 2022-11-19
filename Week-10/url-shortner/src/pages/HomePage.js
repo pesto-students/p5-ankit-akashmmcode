@@ -27,26 +27,32 @@ function HomePage() {
   };
 
   return (
-    <>
-      <div className="split left">
-        <div className="left-text-outer-div">
-          <h1 className="left-text">SHORTER =BETTER</h1>
+    <div className="container">
+      <div className="left">
+        <h1 className="heading">"SHORTER = BETTER"</h1>
+      </div>
+      <div className="right">
+        <div className="right-text">
+          <h3>LET's SHORT SOME URL's</h3>
+        </div>
+        <div>
+          <InputComp
+            name="url"
+            placeholder="PLEASE ENTER YOUR URL HERE"
+            onInputValue={(e) => {
+              return setInput(e.target.value);
+            }}
+            value={input}
+            onsubmit={handleClick}
+            loaderstatus={loader}
+            resultstatus={result}
+            validated={input ? validated : true}
+            validationText="Enter a valid url"
+          />
+          {/* <button>Button</button> */}
         </div>
       </div>
-      <InputComp
-        name="url"
-        placeholder="PLEASE ENTER YOUR URL HERE"
-        onInputValue={(e) => {
-          return setInput(e.target.value);
-        }}
-        value={input}
-        onsubmit={handleClick}
-        loaderstatus={loader}
-        resultstatus={result}
-        validated={input ? validated : true}
-        validationText="Enter a valid url"
-      />
-    </>
+    </div>
   );
 }
 

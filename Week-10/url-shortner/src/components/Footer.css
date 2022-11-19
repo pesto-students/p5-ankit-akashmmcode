@@ -1,5 +1,10 @@
 .footer {
-    height: 20px;
-    background-color: aqua;
-  }
-                                                            
+  text-align: center;
+  height: 20px;
+  background-color: aqua;
+  color: darkslateblue;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
