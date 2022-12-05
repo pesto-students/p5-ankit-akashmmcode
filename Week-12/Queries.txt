@@ -1,0 +1,39 @@
+SELECT MIN(weight) as WEIGHT from ITEMS;
+-----------------------------------------
+
+
+SELECT * from WAREHOUSES WHERE CITY ="Banglore";
+-------------------------------------------------
+
+
+select * from ITEMS i
+inner join Orders_Items_rel oir on oir.item_no=i.Item_no
+inner join ORDERS o on o.Order_no =oir.Order_no
+inner join CUSTOMER c on c.Cust_no = o.Cust_no
+where c.Cust_name = 'Akash';
+-----------------------------------------------------
+ 
+ 
+select ware_house_id,ware_house_name
+from(
+select s.ware_house_id ,count(s.ware_house_id),ware_house_name
+from STORES s
+inner join WAREHOUSES w on w.ware_house_id =s.ware_house_id
+group by s.ware_house_id
+order by count(s.ware_house_id)
+DESC limit 1)a ;
+--------------------------------------------------------------
+
+
+SELECT b.item_no,Description,weight,cost
+from(
+select min(mycount) as cnt,a.item_no
+FROM(SELECT item_no,COUNT(item_no) mycount
+FROM Orders_Items_rel oir
+GROUP BY item_no)a group by a.item_no order by cnt ASC LIMIT 1)b
+inner join ITEMS i on i.Item_no =b.item_no;
+----------------------------------------------------------------
+
+select *,Order_no,Order_date,o.Cust_no from CUSTOMER c
+inner join ORDERS o on o.Cust_no =c.Cust_no;
+-----------------------------------------------------------------
