@@ -1,0 +1,34 @@
+input {
+  background-color: #fed140;
+  padding: 15px 30px;
+  border-style: hidden;
+}
+
+button {
+  height: 45px;
+  background-color: #ba181b;
+  border-style: hidden;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: forestgreen;
+}
+
+input:-internal-autofill-selected {
+  background-color: #fed140 !important;
+}
+
+.url-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.url-input-container > input.error {
+  border: 1px solid red;
+}
+
+.error-text {
+  color: red;
+}

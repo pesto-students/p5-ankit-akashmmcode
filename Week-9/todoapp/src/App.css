@@ -1,0 +1,43 @@
+body{
+  font-family: 'IBM Plex Mono', monospace;
+  width: 500px;
+  margin: auto;
+}
+
+.header{
+  background-color: aquamarine;
+  text-align: center;
+}
+
+.addButton{
+  background-color: aquamarine;
+  margin-block: 5px;
+}
+
+#root{
+  background-color: tomato;
+}
+
+.note{
+  margin-right: 10px;
+}
+
+.input-div{
+  text-align: center;
+}
+
+.main{
+  background-color: azure;
+  width: 400px;
+  height: 120px;
+  margin: auto;
+}
+
+.delete-button-div{
+  text-align: end;
+}
+
+.delete-button{
+  background-color: crimson;
+  margin-right: 5px;
+}

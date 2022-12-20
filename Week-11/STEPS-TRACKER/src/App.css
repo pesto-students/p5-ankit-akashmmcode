@@ -1,0 +1,63 @@
+.outer-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+button {
+  background-color: #14213d;
+  border-style: hidden;
+  height: 3rem;
+  width: 100%;
+  color: aliceblue;
+}
+
+button:hover {
+  /* background-color:#d5c6e0;
+   */
+  background-color: #392f5a;
+  /* color: green; */
+  border-style: solid;
+}
+
+.addstep {
+  width: 70%;
+}
+
+.substep {
+  width: 70%;
+}
+
+.outer-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+button {
+  background-color: #14213d;
+  border-style: hidden;
+  height: 3rem;
+  width: 100%;
+  color: aliceblue;
+}
+
+button:hover {
+  /* background-color:#d5c6e0;
+   */
+  background-color: #392f5a;
+  /* color: green; */
+  border-style: solid;
+}
+
+.addstep {
+  width: 70%;
+}
+
+.substep {
+  width: 70%;
+}
