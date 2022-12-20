@@ -1,0 +1,136 @@
+CREATE TABLE CITIES (CITY varchar(20) NOT NULL PRIMARY KEY,STATE varchar(20));
+
+CREATE TABLE WAREHOUSES (ware_house_id int(10) NOT NULL PRIMARY KEY,
+ware_house_name varchar(20),
+location varchar(20),
+content JSON,
+CITY varchar(20),
+FOREIGN KEY (CITY) REFERENCES CITIES(CITY)
+);
+
+CREATE TABLE STORES (Store_id int(10) NOT NULL PRIMARY KEY,
+Store_name varchar(20),
+Location_city varchar(20),
+ware_house_id int(10),
+FOREIGN KEY (ware_house_id) REFERENCES WAREHOUSES(ware_house_id)
+);
+
+CREATE TABLE CUSTOMER (Cust_no int(10) NOT NULL PRIMARY KEY,
+Cust_name varchar(30),
+Address varchar(30),
+Current_city varchar(20)
+);
+
+CREATE TABLE ORDERS (Order_no int(10) NOT NULL PRIMARY KEY,
+Order_date date,
+Cust_no int(10),
+FOREIGN KEY (Cust_no) REFERENCES CUSTOMER(Cust_no)
+);
+
+CREATE TABLE ITEMS (Item_no int(10) NOT NULL PRIMARY KEY,
+Description text(20),
+weight decimal(5,2),
+cost decimal(5,2)
+);
+
+CREATE TABLE Orders_Items_rel(id int(10),
+Order_no int(10),
+Item_no int(10),
+FOREIGN KEY (Order_no) REFERENCES ORDERS(Order_no),
+FOREIGN KEY (Item_no) REFERENCES ITEMS(Item_no)
+);
+
+CREATE TABLE Stores_Items_rel(id int(10),
+Store_id int(10),
+Item_no int(10),
+FOREIGN KEY (Store_id) REFERENCES STORES(Store_id),
+FOREIGN KEY (Item_no) REFERENCES ITEMS(Item_no)
+);
+
+
+----------------------------------------------------------------------------------------------------------
+INSERT into CITIES Values("Banglore","karnataka");
+INSERT into CITIES Values("Mysore","karnataka");
+INSERT into CITIES Values("Hydrabad","andra-pradesh");
+INSERT into CITIES Values("Goa","panaji");
+INSERT into CITIES Values("Mumbai","Maharashtra");
+
+INSERT into WAREHOUSES Values(1,"warehouse1","Church_street",'{"key1": "value1"}',"Banglore");
+INSERT into WAREHOUSES Values(2,"warehouse2","Brigade_road",'{"key2": "value2"}',"Banglore");
+INSERT into WAREHOUSES Values(3,"warehouse3","langford_road",'{"key3": "value4"}',"Banglore");
+INSERT into WAREHOUSES Values(4,"warehouse4","InStone_road",'{"key4": "value4"}',"Mysore");
+INSERT into WAREHOUSES Values(5,"warehouse5","Gokulam",'{"key5": "value5"}',"Mysore");
+INSERT into WAREHOUSES Values(6,"warehouse6","Ramoji",'{"key6": "value6"}',"Hydrabad");
+INSERT into WAREHOUSES Values(7,"warehouse7","Baga",'{"key7": "value7"}',"Goa");
+INSERT into WAREHOUSES Values(8,"warehouse8","Daravi",'{"key8": "value8"}',"Mumbai");
+
+
+INSERT into STORES  Values(1,"Store1","Banglore",1);
+INSERT into STORES  Values(2,"Store2","Banglore",1);
+INSERT into STORES  Values(3,"Store3","Banglore",2);
+INSERT into STORES  Values(4,"Store4","Banglore",3);
+INSERT into STORES  Values(5,"Store5","Mysore",4);
+INSERT into STORES  Values(6,"Store6","Hydrabad",6);
+INSERT into STORES  Values(7,"Store7","Goa",7);
+INSERT into STORES  Values(8,"Store8","Mumbai",8);
+
+INSERT into CUSTOMER  Values(1,"Akash","DBSandra","Banglore");
+INSERT into CUSTOMER  Values(2,"GTM","VPura","Banglore");
+INSERT into CUSTOMER  Values(3,"Freddy","HSR","Koorg");
+INSERT into CUSTOMER  Values(4,"Arjun","fortk","Kochi");
+INSERT into CUSTOMER  Values(5,"Nithin","TDasHalli","Banglore");
+INSERT into CUSTOMER  Values(6,"SaiLal","JPpark","Mysore");
+INSERT into CUSTOMER  Values(7,"Shabarish","LKnagar","Mysore");
+INSERT into CUSTOMER  Values(8,"Atif","Karama","Dubai");
+INSERT into CUSTOMER  Values(9,"Finaz","Burjman","Doha");
+
+
+INSERT into ORDERS  Values(1,"2022-11-1",1);
+INSERT into ORDERS  Values(2,"2022-11-2",1);
+INSERT into ORDERS  Values(3,"2022-11-3",2);
+INSERT into ORDERS  Values(4,"2022-11-4",9);
+INSERT into ORDERS  Values(5,"2022-11-5",3);
+INSERT into ORDERS  Values(6,"2022-11-6",4);
+INSERT into ORDERS  Values(7,"2022-11-7",5);
+INSERT into ORDERS  Values(8,"2022-11-8",6);
+INSERT into ORDERS  Values(9,"2022-11-9",7);
+INSERT into ORDERS  Values(10,"2022-11-10",8);
+INSERT into ORDERS  Values(11,"2022-11-11",9);
+INSERT into ORDERS  Values(12,"2022-11-12",9);
+
+INSERT into ITEMS  Values(1,"Fridge",1.5,25.000);
+INSERT into ITEMS  Values(2,"WashingMachine",1.3,20.000);
+INSERT into ITEMS  Values(3,"TreadMill",1.25,15.000);
+INSERT into ITEMS  Values(4,"Mobile",1,10.000);
+INSERT into ITEMS  Values(5,"AC",1.1,5.000);
+INSERT into ITEMS  Values(6,"TV",1.2,22.000);
+INSERT into ITEMS  Values(7,"Fan",0.5,26.000);
+
+INSERT into Orders_Items_rel Values(1,1,1);
+INSERT into Orders_Items_rel Values(2,12,1);
+INSERT into Orders_Items_rel Values(3,2,2);
+INSERT into Orders_Items_rel Values(4,3,2);
+INSERT into Orders_Items_rel Values(5,4,3);
+INSERT into Orders_Items_rel Values(6,5,4);
+INSERT into Orders_Items_rel Values(7,5,5);
+INSERT into Orders_Items_rel Values(8,6,6);
+INSERT into Orders_Items_rel Values(9,7,5);
+INSERT into Orders_Items_rel Values(10,8,7);
+INSERT into Orders_Items_rel Values(11,9,7);
+INSERT into Orders_Items_rel Values(12,10,2);
+INSERT into Orders_Items_rel Values(13,11,2);
+
+
+INSERT into Stores_Items_rel Values(1,1,1);
+INSERT into Stores_Items_rel Values(2,2,1);
+INSERT into Stores_Items_rel Values(3,3,2);
+INSERT into Stores_Items_rel Values(4,4,2);
+INSERT into Stores_Items_rel Values(5,4,3);
+INSERT into Stores_Items_rel Values(6,5,4);
+INSERT into Stores_Items_rel Values(7,5,5);
+INSERT into Stores_Items_rel Values(8,6,6);
+INSERT into Stores_Items_rel Values(9,7,5);
+INSERT into Stores_Items_rel Values(10,8,7);
+INSERT into Stores_Items_rel Values(11,1,7);
+INSERT into Stores_Items_rel Values(12,2,2);
+INSERT into Stores_Items_rel Values(13,3,2); 
